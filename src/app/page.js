@@ -1,4 +1,3 @@
-
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -9,7 +8,8 @@ export default function HomePage() {
   const [showLogin, setShowLogin] = useState(false);
   const [showPassKey, setShowPassKey] = useState(false);
   const [passKey, setPassKey] = useState("");
-  const [showInvalidPassKeyDialog, setShowInvalidPassKeyDialog] = useState(false);
+  const [showInvalidPassKeyDialog, setShowInvalidPassKeyDialog] =
+    useState(false);
   const router = useRouter();
   const ADMIN_PASS_KEY = "A1B2C3D4E5";
 
@@ -35,18 +35,19 @@ export default function HomePage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-red-600 to-blue-950 text-white">
       {/* Logo & Title */}
       <div className="flex flex-col items-center mb-6">
-        <Image
-          src="/assets/logo.png"
-          alt="Logo"  
-          width={200}
-          height={200}
-        />
-        <h1 className="text-4xl font-extrabold mt-3 text-blue-400">Tastebud Theatre</h1>
+        <Image src="/assets/logo.png" alt="Logo" width={200} height={200} />
+        <h1 className="text-4xl font-extrabold mt-3 text-blue-400">
+          Tastebud Theatre
+        </h1>
       </div>
 
       {/* Description */}
       <p className="mt-3 text-gray-300 text-lg text-center max-w-md">
-        Your gateway to unlimited entertainment!!! <br /> One stop solution for your movie night confusions.<br />🎬 Enjoy your favorite movies, explore new genres, and experience seamless movie management with our platform. 
+        Your gateway to unlimited entertainment!!! <br /> One stop solution for
+        your movie night confusions.
+        <br />
+        🎬 Enjoy your favorite movies, explore new genres, and experience
+        seamless movie management with our platform.
       </p>
 
       {/* Buttons */}
@@ -89,7 +90,9 @@ export default function HomePage() {
             </button>
 
             {/* Title */}
-            <h2 className="text-2xl font-bold text-center text-gray-800">Admin Login</h2>
+            <h2 className="text-2xl font-bold text-center text-gray-800">
+              Admin Login
+            </h2>
 
             {/* Input Fields */}
             <div className="mt-4 space-y-3">
@@ -108,7 +111,7 @@ export default function HomePage() {
             {/* Login Button */}
             <button
               onClick={handleLogin}
-              className="mt-5 w-full py-3 rounded-lg bg-blue-500 text-white font-semibold text-lg hover:bg-blue-600 transition duration-300 shadow-md"
+              className="mt-5 w-full py-3 rounded-lg bg-blue-600 text-white font-semibold text-lg hover:bg-blue-800 transition duration-300 shadow-md"
             >
               Login
             </button>
@@ -116,7 +119,7 @@ export default function HomePage() {
             {/* Close Button (Only One) */}
             <button
               onClick={() => setShowLogin(false)}
-              className="mt-3 w-full py-3 rounded-lg bg-red-500 text-white font-semibold text-lg hover:bg-red-600 transition duration-300 shadow-md"
+              className="mt-3 w-full py-3 rounded-lg bg-red-600 text-white font-semibold text-lg hover:bg-red-800 transition duration-300 shadow-md"
             >
               Close
             </button>
@@ -128,7 +131,9 @@ export default function HomePage() {
       {showPassKey && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="p-5 bg-white rounded-lg shadow-2xl max-w-md w-full relative animate-fadeIn">
-            <h2 className="text-lg font-bold text-center text-gray-800">Enter Admin Pass Key</h2>
+            <h2 className="text-lg font-bold text-center text-gray-800">
+              Enter Admin Pass Key
+            </h2>
             <input
               type="text"
               value={passKey}
@@ -149,7 +154,9 @@ export default function HomePage() {
       {showInvalidPassKeyDialog && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="p-6 bg-white rounded-lg shadow-2xl max-w-md w-full relative animate-fadeIn">
-            <h2 className="text-lg font-bold text-center text-red-600">Invalid Pass Key!!</h2>
+            <h2 className="text-lg font-bold text-center text-red-600">
+              Invalid Pass Key!!
+            </h2>
             <p className="text-center mt-2">Not an admin.</p>
             <Button
               className="mt-4 w-full bg-red-500 text-white font-semibold text-lg hover:bg-red-600 transition duration-300 shadow-md"
